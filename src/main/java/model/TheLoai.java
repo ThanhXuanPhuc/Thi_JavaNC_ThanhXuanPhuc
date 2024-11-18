@@ -14,10 +14,15 @@ public class TheLoai {
 
     public TheLoai() {
     }
-
+    
+    public TheLoai(int maloai, String tenloai) {
+        this.maloai = maloai;
+        this.tenloai = tenloai;
+    }
     public int getMaloai() {
         return maloai;
     }
+    
 
     public void setMaloai(int maloai) {
         this.maloai = maloai;

@@ -3,6 +3,7 @@
     Created on : Sep 15, 2023, 8:14:39 AM
     Author     : KHOACNTT
 --%>
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="model.SanPham"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -24,6 +25,7 @@
         <div class="col-sm-12">
             <div class="row">  
                 <%
+                    DecimalFormat fmt = new DecimalFormat("#,##0 VND");
                     ArrayList<SanPham> dsSanPham =(ArrayList<SanPham>)request.getAttribute("dsSanPham");
                     for(SanPham s: dsSanPham)
                     {
@@ -39,7 +41,7 @@
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col">
-                                    <p class="btn btn-danger btn-block"><%=s.getDongia() %></p>
+                                    <p class="btn btn-danger btn-block"><%=fmt.format(s.getDongia()) %></p>
                                 </div>
                                 <div class="col">
                                     <a href="#" class="btn btn-success btn-block">Add to cart</a>

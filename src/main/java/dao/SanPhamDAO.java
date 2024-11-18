@@ -22,7 +22,7 @@ public class SanPhamDAO {
 
     public ArrayList<SanPham> getTop6() {
         ArrayList<SanPham> ds = new ArrayList<>();
-        String sql = "select top 6 * from SanPham order by dongia asc";
+        String sql = "select top 6 * from SanPham where khuyenmai='true' order by dongia asc";
         conn = DbContext.getConnection();
         try {
             ps = conn.prepareStatement(sql);

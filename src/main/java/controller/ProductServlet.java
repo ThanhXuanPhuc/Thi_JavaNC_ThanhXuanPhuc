@@ -33,13 +33,12 @@ public class ProductServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         TheLoaiDAO tDAO = new TheLoaiDAO();
         SanPhamDAO sDAO = new SanPhamDAO();
-        
-        int maloai = request.getParameter("MaLoai")==null? 1: Integer.parseInt(request.getParameter("mMaLoai"));
-        
-        
+
+        int maloai = request.getParameter("MaLoai") == null ? 1 : Integer.parseInt(request.getParameter("MaLoai"));
+
         request.setAttribute("dsTheLoai", tDAO.getAll());
         request.setAttribute("dsSanPham", sDAO.laySanPhamTheoLoai(maloai));
         request.getRequestDispatcher("product.jsp").forward(request, response);
